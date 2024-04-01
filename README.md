@@ -25,7 +25,7 @@ php artisan make:model Episode
 The views are made by using the following conventions:
 
 - each subject gets its own folder (Movies, Series)
-- the files are named as follows: <action>-blade.php
+- the files are named as follows: 'action'-blade.php
 
 So for instance in the Movies folder there will be a create-blade.php, this is used to create the local database records.
 
