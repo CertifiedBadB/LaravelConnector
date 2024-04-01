@@ -1,5 +1,6 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://play-lh.googleusercontent.com/XXqfqs9irPSjphsMPcC-c6Q4-FY5cd8klw4IdI2lof_Ie-yXaFirqbNDzK2kJ808WXJk" width="400" alt="Laravel Logo"></a></p>
-<span style="font-size:0.5em;">
+<span style="font-size:0.2em;">
+    
 ## Introduction
 Hello there! I'm Jordy Huijgens, and I'm exited to present my work on this backend assignment. I've embarked on this assignment with the goal of showcasing my skills and enthusiasm for joining your team. I believe this project not only demonstrates my technical capabilities but also reflects my commitment to delivering high-quality, well-structured code that aligns with industry standards. I'm excited to dive into this project and showcase my abilities.  
 
