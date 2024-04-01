@@ -4,8 +4,9 @@
 <a><img src="https://komarev.com/ghpvc/?username=certifiedbadb&style=flat-square&color=blue" alt=""/></p></a>
     
 </p>
+<p align="center">
 <a href="mailto:jordy.huijgens@outlook.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Mail me!"></a>
-
+</p>
 
     
 ## Introduction
