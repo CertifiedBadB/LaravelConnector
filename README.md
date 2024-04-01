@@ -2,7 +2,14 @@
 
 ## Hi..
 My name is Jordy Huijgens, and I am a Junior Software developer.
-
+## Migration
+The migrations are made using artisan like:
+``` 
+php artisan make:migration Movies
+php artisan make:migration Series
+php artisan make:migration Seasons
+php artisan make:migration Episodes
+``` 
 ## Models 
 
 The models are made using artisan like: 
