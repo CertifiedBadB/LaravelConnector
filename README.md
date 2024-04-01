@@ -11,7 +11,7 @@
     
 ## Introduction
 
-<# Zad .0>
+
 Hello there! I'm Jordy Huijgens, and I'm exited to present my work on this backend assignment. I've embarked on this assignment with the goal of showcasing my skills and enthusiasm for joining your team. I believe 
 
 this project not only demonstrates my technical capabilities but also reflects my commitment to delivering high-quality, well-structured code that aligns with industry standards. I'm excited to dive into this 
@@ -21,15 +21,15 @@ project and showcase my abilities.
 I'll be diligently working on this assignment, pushing regular updates to my private GitHub repository. Feel free to reach out if you have any questions or require further clarification on any aspect of my work. C;
 
 Thank you for considering me for this opportunity. I look forward to the possibility of contributing to your team!
-</#>
+
 ## Migration
 The migrations are made using artisan like:
-``` 
+<!-- start:code block -->
 php artisan make:migration Movies
 php artisan make:migration Series
 php artisan make:migration Seasons
 php artisan make:migration Episodes
-``` 
+<!-- end:code block -->
 ## Models 
 
 The models are made using artisan like: 
