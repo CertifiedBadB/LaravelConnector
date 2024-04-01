@@ -5,6 +5,14 @@ My name is Jordy Huijgens, and I am a Junior Software developer.
 
 ## Models 
 
+The models are made using artisan like: 
+``` 
+php artisan make:model Movie
+php artisan make:model Series
+php artisan make:model Season
+php artisan make:model Episode
+```
+
 ## Views
 
 ## Controllers
