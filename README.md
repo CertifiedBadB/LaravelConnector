@@ -7,9 +7,6 @@
 <p align="center">
 <a href="mailto:jordy.huijgens@outlook.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Mail me!"></a>
 </p>
-<a data-ga-click="Topic, repository page" data-octo-click="topic_click" data-octo-dimensions="topic:php" href="/topics/php" title="Topic: php" data-view-component="true" class="topic-tag topic-tag-link">
-  php
-</a>
     
 ## Introduction
 
