@@ -1,8 +1,8 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://play-lh.googleusercontent.com/XXqfqs9irPSjphsMPcC-c6Q4-FY5cd8klw4IdI2lof_Ie-yXaFirqbNDzK2kJ808WXJk" width="400" alt="Laravel Logo"></a></p>
 <p align="center">
-<a href="mailto:jordy.huijgens@outlook.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Mail me!"></a>
+<a style="height:50"href="mailto:jordy.huijgens@outlook.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Mail me!"></a>
 <a href="https://www.linkedin.com/in/jordy-huijgens-319406250/"><img src="https://img.shields.io/badge/LinkedIn-blue" alt="Mail me!"></a>
-<a></a><img src="https://komarev.com/ghpvc/?username=certifiedbadb&style=flat-square&color=blue" alt=""/></p>a>
+<a><img src="https://komarev.com/ghpvc/?username=certifiedbadb&style=flat-square&color=blue" alt=""/></p></a>
     
 </p>
 
