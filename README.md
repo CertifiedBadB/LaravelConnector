@@ -24,12 +24,12 @@ Thank you for considering me for this opportunity. I look forward to the possibi
 
 ## Migration
 The migrations are made using artisan like:
-<!-- start:code block -->
+``` 
 php artisan make:migration Movies
 php artisan make:migration Series
 php artisan make:migration Seasons
 php artisan make:migration Episodes
-<!-- end:code block -->
+``` 
 ## Models 
 
 The models are made using artisan like: 
