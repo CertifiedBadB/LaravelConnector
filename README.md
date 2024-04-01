@@ -22,9 +22,20 @@ php artisan make:model Episode
 
 ## Views
 
+The views are made by using the following conventions:
+
+- each subject gets its own folder (Movies, Series)
+- the files are named as follows: <action>-blade.php
+
+So for instance in the Movies folder there will be a create-blade.php, this is used to create the local database records.
+
 ## Controllers
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+The controllers are made using artisan like:
+``` 
+php artisan make:controller MovieController
+php artisan make:controller SeriesController
+```
 
 ### Premium Partners
 
