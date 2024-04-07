@@ -53,7 +53,7 @@ class MovieController extends Controller
 
     public function cleanup(){
         try {
-            DB::table('movies')->truncate();
+            Movie::truncate();
             return response()->json(['message' => 'Movies table emptied successfully'], 200);
         } catch (\Exception $e) {
             // Handle exceptions
