@@ -12,10 +12,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Schema::create('episodes',function (Blueprint $table){
-        //     $table->Id();
-        //     $table->string('name');
-        // });
+        Schema::create('episodes',function (Blueprint $table){
+            $table->Id();
+            $table->string('name');
+            $table->foreignId('season_id')->constrained();
+            $table->foreignId('series_id')->constrained();
+        });
     }
 
     /**
