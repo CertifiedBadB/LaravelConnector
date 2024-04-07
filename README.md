@@ -62,7 +62,7 @@ I check if a movie already exists in the database, and insert the movie if it do
 Also I create 2 arrays for the return value, 1 containing added records and 1 containing records that wont get added in case of data duplication.
 
 ## Token
-The token is saved in the .env file and is called:
+The bearer token is saved in the .env file and is called:
 ``` 
 TMDB_API_TOKEN
 ``` 
