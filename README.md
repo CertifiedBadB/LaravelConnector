@@ -53,7 +53,7 @@ php artisan make:controller MovieController
 php artisan make:controller SeriesController
 ```
 
-# movieController
+### movieController
 
 The moviecontroller gets a list of populair movies, and if you cannot connect to the database you will get a exception.
 After that follows a try,catch block with a exception if there are any other problems while creating the records in the database.
