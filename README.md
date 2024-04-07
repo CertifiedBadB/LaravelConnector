@@ -61,6 +61,12 @@ I loop through each movie using a foreach loop.
 I check if a movie already exists in the database, and insert the movie if it doesnt exists yet.
 Also I create 2 arrays for the return value, 1 containing added records and 1 containing records that wont get added in case of data duplication.
 
+## Token
+The token is saved in the .env file and is called:
+``` 
+TMDB_API_TOKEN
+``` 
+If this was a actually application getting pushed to production I should save it on another place. (Depends on where you host your application)
 
 ## License
 
