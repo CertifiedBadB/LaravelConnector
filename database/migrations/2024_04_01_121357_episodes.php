@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    
+
     /**
      * Run the migrations.
      */
@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('episodes',function (Blueprint $table){
             $table->Id();
             $table->string('name');
-            $table->foreignId('season_id')->constrained();
+            $table->foreignId('seasons_id')->constrained();
             $table->foreignId('series_id')->constrained();
         });
     }

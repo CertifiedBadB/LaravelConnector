@@ -19,19 +19,19 @@ class MovieController extends Controller
     public function store(){
         $moviesInserted = [];
         $moviesNotInserted = [];
-        
+
         try {
             $response = Http::withHeaders([
                 'Authorization' => 'Bearer ' . env('TMDB_API_TOKEN'),
                 'accept' => 'application/json',
-            ])->get('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1');   
-            
+            ])->get('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1');
+
             if ($response->successful()) {
                 $movies = $response->json()['results'];
-                
+
                 foreach($movies as $movie) {
                     $existingRecord = Movie::where('name', $movie['title'])->count();
-                    
+
                     if ($existingRecord > 0) {
                         $moviesNotInserted[] = $movie['title'];
                     } else {
@@ -47,7 +47,7 @@ class MovieController extends Controller
             // Handle exceptions
             return response()->json(['error' => $e->getMessage()], 500);
         }
-    
+
         return response()->json(['inserted' => $moviesInserted, 'notInserted' => $moviesNotInserted], 200);
     }
 
