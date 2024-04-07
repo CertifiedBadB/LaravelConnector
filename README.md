@@ -43,6 +43,7 @@ The views are made by using the following conventions:
 - the files are named as follows: 'action'-blade.php
 
 So for instance in the Movies folder there will be a create-blade.php, this is used to create the local database records.
+Each create-database file also has a button for deleting ther database, for debugging purposes.
 
 ## Controllers
 
@@ -51,6 +52,14 @@ The controllers are made using artisan like:
 php artisan make:controller MovieController
 php artisan make:controller SeriesController
 ```
+
+# movieController
+
+The moviecontroller gets a list of populair movies, and if you cannot connect to the database you will get a exception.
+After that follows a try,catch block with a exception if there are any other problems while creating the records in the database.
+I loop through each movie using a foreach loop.
+I check if a movie already exists in the database, and insert the movie if it doesnt exists yet.
+Also I create 2 arrays for the return value, 1 containing added records and 1 containing records that wont get added in case of data duplication.
 
 
 ## License
