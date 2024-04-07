@@ -16,6 +16,13 @@
  project and showcase my abilities.  
  I'll be diligently working on this assignment, pushing regular updates to my private GitHub repository. Feel free to reach out if you have any questions or require further clarification on any aspect of my work. C;
  Thank you for considering me for this opportunity. I look forward to the possibility of contributing to your team!_
+ 
+## Token
+The bearer token is saved in the .env file and is called:
+``` 
+TMDB_API_TOKEN
+``` 
+If this was a actually application getting pushed to production I should save it on another place. (Depends on where you host your application)
 
 ## Migration
 The migrations are made using artisan like:
@@ -43,6 +50,7 @@ The views are made by using the following conventions:
 - the files are named as follows: 'action'-blade.php
 
 So for instance in the Movies folder there will be a create-blade.php, this is used to create the local database records.
+Each create-database file also has a button for deleting ther database, for debugging purposes.
 
 ## Controllers
 
@@ -50,6 +58,39 @@ The controllers are made using artisan like:
 ``` 
 php artisan make:controller MovieController
 php artisan make:controller SeriesController
+```
+
+### movieController
+
+The moviecontroller gets a list of populair movies, and if you cannot connect to the database you will get a exception.
+After that follows a try,catch block with a exception if there are any other problems while creating the records in the database.
+I loop through each movie using a foreach loop.
+I check if a movie already exists in the database, and insert the movie if it doesnt exists yet.
+Also I create 2 arrays for the return value, 1 containing added records and 1 containing records that wont get added in case of data duplication.
+
+# How to use
+
+Open a terminal and go to the project location, start typing:
+
+``` 
+php artisan migrate
+```
+
+Now your SQLlite database is created.
+
+After this you can start the application using:
+
+``` 
+php artisan serve
+```
+to add and delete movies to the database go to:
+``` 
+url/movies/create
+```
+
+to add and delete series to the database go to 
+``` 
+url/series/create
 ```
 
 
