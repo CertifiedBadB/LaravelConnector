@@ -68,6 +68,30 @@ I loop through each movie using a foreach loop.
 I check if a movie already exists in the database, and insert the movie if it doesnt exists yet.
 Also I create 2 arrays for the return value, 1 containing added records and 1 containing records that wont get added in case of data duplication.
 
+# How to use
+
+Open a terminal and go to the project location, start typing:
+
+``` 
+php artisan migrate
+```
+
+Now your SQLlite database is created.
+
+After this you can start the application using:
+
+``` 
+php artisan serve
+```
+to add and delete movies to the database go to:
+``` 
+url/movies/create
+```
+
+to add and delete series to the database go to 
+``` 
+url/series/create
+```
 
 
 ## License
