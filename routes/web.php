@@ -10,3 +10,4 @@ Route::get('/', function () {
 Route::get('/movies',[MovieController::class,'index'])->name('movie.index');
 Route::get('/movies/create',[MovieController::class,'create'])->name('movie.create');
 Route::post('/movies',[MovieController::class,'store'])->name('movie.store');
+Route::delete('/movies',[MovieController::class,'cleanup'])->name('movie.cleanup');

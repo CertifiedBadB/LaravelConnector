@@ -17,28 +17,43 @@ class MovieController extends Controller
     }
 
     public function store(){
-        $response = Http::withHeaders([
-            'Authorization' => 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0MjZiOTBkZmVhNDE3NTI4MjU4NWZlOTU0OWJiNTI2MCIsInN1YiI6IjY2MGE5ODM4YTg4NTg3MDE3Y2U1YzE4ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gEZ4Xx9leF43ydRzOLD2izmhi-DyxaOyChU3i3oceR8',
-            'accept' => 'application/json',
-        ])
-        ->get('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1')
-        ->json();
+        $moviesInserted = [];
+        $moviesNotInserted = [];
+        try {
+            $response = Http::withHeaders([
+                'Authorization' => 'Bearer ' . env('TMDB_API_TOKEN'),
+                'accept' => 'application/json',
+            ])->get('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1');   
+            if ($response->successful()) {
+                $movies = $response->json()['results'];
+                foreach($movies as $movie) {
+                    $existingRecord = DB::table('movies')->where('name', $movie['title'])->count();
+                    
+                    if ($existingRecord > 0) {
+                        $moviesNotInserted[] = $movie['title'];
+                    } else {
+                        DB::table('movies')->insert(['name' => $movie['title']]);
+                        $moviesInserted[] = $movie['title'];
+                    }
+                }
+            } else {
+                // Handle HTTP request error
+                return response()->json(['error' => 'Failed to fetch movies'], 500);
+            }
+        } catch (Exception $e) {
+            // Handle exceptions
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+    
+        return response()->json(['inserted' => $moviesInserted, 'notInserted' => $moviesNotInserted], 200);
+    }
 
-         foreach($response['results'] as $movie){
-
-
-            // $existingrecord = DB::table('movies')::where('name', $movie['title'])->count();
-            // echo $existingrecord;
-//             if ($existingrecord != null) {
-//                 echo "already exists" . "<br>";
-//             }
-//             else{
-            DB::table('movies')->insert(
-                ['name' => $movie['title']]
-            );
-            echo $movie['title'] . " inserted";
-//         }
-         }
-//          echo "are inserted in the database...";
-}
+    public function cleanup(){
+        try {
+            DB::table('movies')->truncate();
+            return response()->json(['message' => 'Movies table emptied successfully'], 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Failed to empty movies table: ' . $e->getMessage()], 500);
+        }
+    }
 }

@@ -24,7 +24,8 @@ h1 {
     margin-bottom: 20px;
 }
 
-input[type="submit"] {
+.insert {
+    margin-bottom: 2%;
     padding: 10px 20px;
     background-color: #61afef;
     color: #282c34;
@@ -33,7 +34,20 @@ input[type="submit"] {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+.delete {
+    padding: 10px 20px;
+    background-color: #a82918;
+    color: #1d1c1c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-input[type="submit"]:hover {
+.insert:hover {
     background-color: #528bff;
+}
+.delete:hover {
+    background-color: #360706;
+    color: #7a7a7a;
 }

@@ -12,9 +12,14 @@
         <form  method="POST" action="{{route('movie.store')}}">
             @csrf
             @method('post')
-            <input type="submit" value="Fetch and Insert">
+            <input class="insert" type="submit" value="Fetch and Insert">
         </form>
-        <p style="font-size: 12px; margin-top: 20px;">/* Disclaimer: This call inserts 10 movies from the movie database into your database to discover. */</p>
+        <form method="POST" action="{{ route('movie.cleanup') }}">
+            @csrf
+            @method('delete')
+            <input type="submit" class="delete" value="Delete Records">
+        </form>
+        <p style="font-size: 12px; margin-top: 20px;">/* Disclaimer: This call inserts populair movies from the movie database into your database to discover. */</p>
     </div>
 </body>
 </html>
