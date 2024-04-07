@@ -19,20 +19,23 @@ class MovieController extends Controller
     public function store(){
         $moviesInserted = [];
         $moviesNotInserted = [];
+        
         try {
             $response = Http::withHeaders([
                 'Authorization' => 'Bearer ' . env('TMDB_API_TOKEN'),
                 'accept' => 'application/json',
             ])->get('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1');   
+            
             if ($response->successful()) {
                 $movies = $response->json()['results'];
+                
                 foreach($movies as $movie) {
-                    $existingRecord = DB::table('movies')->where('name', $movie['title'])->count();
+                    $existingRecord = Movie::where('name', $movie['title'])->count();
                     
                     if ($existingRecord > 0) {
                         $moviesNotInserted[] = $movie['title'];
                     } else {
-                        DB::table('movies')->insert(['name' => $movie['title']]);
+                        Movie::create(['name' => $movie['title']]);
                         $moviesInserted[] = $movie['title'];
                     }
                 }
@@ -53,6 +56,7 @@ class MovieController extends Controller
             DB::table('movies')->truncate();
             return response()->json(['message' => 'Movies table emptied successfully'], 200);
         } catch (\Exception $e) {
+            // Handle exceptions
             return response()->json(['error' => 'Failed to empty movies table: ' . $e->getMessage()], 500);
         }
     }
