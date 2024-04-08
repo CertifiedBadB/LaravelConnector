@@ -51,13 +51,13 @@ class SeriesController extends Controller
             // Handle exceptions
             return response()->json(['error' => $e->getMessage()], 500);
         }
-        $this->storeSeasons($seriesInserted);
+        $this->storeSeasonsAndEpisodes($seriesInserted);
         //return response()->json(['inserted' => $seriesInserted, 'notInserted' => $seriesNotInserted], 200);
     }
 
 
 
-    function storeSeasons($seriesInserted) {
+    function storeSeasonsAndEpisodes($seriesInserted) {
         if (empty($seriesInserted)) {
             echo 'No series inserted.';
             return; // Return early if no series are inserted
