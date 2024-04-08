@@ -17,7 +17,9 @@
  I'll be diligently working on this assignment, pushing regular updates to my private GitHub repository. Feel free to reach out if you have any questions or require further clarification on any aspect of my work. C;
  Thank you for considering me for this opportunity. I look forward to the possibility of contributing to your team!_
 
- If you are not happy with my results I am willing to put some more time in it. The time I already have put in this project is around 18 hours, including watching tutorials to learn Laravel.
+ I am willing to put some more time in it. The time I already have put in this project is around 18 hours, including watching tutorials to learn Laravel. I am happy with my results aspecially on the MovieController. 
+ 
+ I think my functions are a bit to big on the SeriesController, But im glad I did a Laravel Project, it was very fun, and great to learn.
  
 ## Token
 The bearer token is saved in the .env (I will add a example.env) file and is called:
