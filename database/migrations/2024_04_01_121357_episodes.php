@@ -15,8 +15,10 @@ return new class extends Migration
         Schema::create('episodes',function (Blueprint $table){
             $table->Id();
             $table->string('name');
-            $table->foreignId('seasons_id')->constrained();
-            $table->foreignId('series_id')->constrained();
+            $table->unsignedBigInteger('season_id');
+            $table->foreign('season_id')->references('Id')->on('seasons')->onDelete('cascade');
+            $table->unsignedBigInteger('series_id');
+            $table->foreign('series_id')->references('Id')->on('series')->onDelete('cascade');
         });
     }
 
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('episodes');
     }
 };

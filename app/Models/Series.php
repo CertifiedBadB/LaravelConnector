@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Series extends Model
 {
+    protected $fillable = ['id','name'];
     public $timestamps = false;
     use HasFactory;
+
+    public function seasons()
+{
+    return $this->hasMany(Season::class);
+}
 }

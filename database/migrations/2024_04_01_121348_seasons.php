@@ -15,7 +15,8 @@ return new class extends Migration
         Schema::create('seasons',function (Blueprint $table){
             $table->Id();
             $table->string('name');
-            $table->foreignId('series_id')->constrained();
+            $table->unsignedBigInteger('series_id');
+            $table->foreign('series_id')->references('Id')->on('series')->onDelete('cascade');
         });
     }
 
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('seasons');
     }
 };
