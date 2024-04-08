@@ -72,6 +72,14 @@ I loop through each movie using a foreach loop.
 I check if a movie already exists in the database, and insert the movie if it doesnt exists yet.
 Also I create 2 arrays for the return value, 1 containing added records and 1 containing records that wont get added in case of data duplication.
 
+
+### seriescontroller
+The seriescontroller enters populair series, their seasons and their episodes into tables.
+I can add some try catches and error handling if needed, but I think its good to go.
+The origional idea was to make 3 seperate functions, 1 for adding series, 1 for adding seasons and 1 for adding episodes.
+But the Episodes part was so small, that i decided to add it to the Season function and make that into 1 function.
+
+
 # How to use
 
 Open a terminal and go to the project location, start typing:
